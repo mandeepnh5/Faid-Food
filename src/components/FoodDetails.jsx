@@ -13,7 +13,7 @@ export default function FoodDetail() {
       {/* Sidebar */}
       <nav className="w-64 bg-white p-4 shadow-md hidden lg:block">
         <div className="flex items-center gap-2 mb-8">
-          <span className="text-2xl font-bold text-green-600">🥬 PR</span>
+          <span className="text-2xl font-bold text-green-600">🥬 RAJNY</span>
           <ChevronLeft className="w-6 h-6 text-gray-400" />
         </div>
         <div className="space-y-4">
@@ -49,10 +49,10 @@ export default function FoodDetail() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-2/3">
+            <div className="lg:w-[600px]">
               <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=500&width=500"
+                <img
+                  src="/butter-chicken.jpg"
                   alt="Butter Chicken"
                   width={500}
                   height={500}
@@ -63,7 +63,7 @@ export default function FoodDetail() {
                 </div>
               </div>
               <div className="mt-6 space-y-4">
-                <h1 className="text-4xl font-bold">Butter Chicken</h1>
+                <h1 className="text-5xl font-bold">Butter Chicken</h1>
                 <p className="text-gray-600">
                   Tender marinated chicken in a rich, creamy tomato sauce with a perfect blend of aromatic spices.
                 </p>
@@ -77,7 +77,7 @@ export default function FoodDetail() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/3">
+            <div className="lg:w-[600px]">
               <Card>
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
@@ -136,23 +136,23 @@ export default function FoodDetail() {
             <h2 className="text-2xl font-semibold mb-6">Other Dishes Youll Love</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <DishCard
-                image="/placeholder.svg?height=200&width=200"
-                name="Chicken Masala"
+                image="/gob.jpg"
+                name="Gobi Manchurian"
                 rating={4.5}
               />
               <DishCard
-                image="/placeholder.svg?height=200&width=200"
-                name="Classic Chicken"
+                image="/grilled.jpg"
+                name="Grilled Chicken"
                 rating={4.3}
               />
               <DishCard
-                image="/placeholder.svg?height=200&width=200"
+                image="/ita.jpg"
                 name="Italian Fish"
                 rating={4.6}
               />
               <DishCard
-                image="/placeholder.svg?height=200&width=200"
-                name="Royal Prawn"
+                image="/birii.webp"
+                name="Chicken Biryani"
                 rating={4.8}
               />
             </div>
@@ -182,10 +182,9 @@ function DishCard({ image, name, rating }) {
     <Link href="#" className="group">
       <Card className="overflow-hidden transition-transform group-hover:scale-105">
         <div className="aspect-square relative">
-          <Image
+          <img
             src={image}
             alt={name}
-            fill
             className="object-cover"
           />
         </div>
