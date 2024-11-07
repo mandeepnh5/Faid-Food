@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -16,10 +17,66 @@ import {
   ShoppingCart,
   ThumbsUp,
   User,
+  X,
 } from "lucide-react";
-// import Link from "next/link"
-// import Image from "next/image"
 import { Link } from "react-router-dom";
+
+function Chatbot() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    { text: "Hello! How can I help you with nutrient food today?", isBot: true },
+    { text: "Here are some nutrient-rich foods you might consider:", isBot: true },
+    { text: "1. Leafy greens like spinach and kale", isBot: true },
+    { text: "2. Berries for antioxidants", isBot: true },
+    { text: "3. Fatty fish for omega-3s", isBot: true },
+    { text: "4. Nuts and seeds for healthy fats", isBot: true },
+  ]);
+
+  return (
+    <div className="fixed bottom-4 right-4 z-50">
+      {!isOpen && (
+        <Button onClick={() => setIsOpen(true)} className="rounded-full">
+          <MessageSquare className="w-6 h-6" />
+        </Button>
+      )}
+      {isOpen && (
+        <Card className="w-80">
+          <CardContent className="p-4">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-bold">Nutrient Food Chat</h3>
+              <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+            <div className="h-60 overflow-y-auto mb-4">
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`mb-2 p-2 rounded-lg ${
+                    message.isBot ? "bg-gray-100" : "bg-blue-100 text-right"
+                  }`}
+                >
+                  {message.text}
+                </div>
+              ))}
+            </div>
+            <input
+              type="text"
+              placeholder="Type your message..."
+              className="w-full p-2 border rounded-md"
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') {
+                  setMessages([...messages, { text: e.target.value, isBot: false }]);
+                  e.target.value = '';
+                }
+              }}
+            />
+          </CardContent>
+        </Card>
+      )}
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -197,6 +254,7 @@ export default function HomePage() {
           </TabsContent>
         </Tabs>
       </main>
+      <Chatbot />
     </div>
   );
 }
