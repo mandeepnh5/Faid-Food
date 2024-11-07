@@ -13,7 +13,7 @@ export default function FoodDetail() {
       {/* Sidebar */}
       <nav className="w-64 bg-white p-4 shadow-md hidden lg:block">
         <div className="flex items-center gap-2 mb-8">
-          <span className="text-2xl font-bold text-green-600">🥬 MANDEEP</span>
+          <span className="text-2xl font-bold text-green-600">🥬 IITMBytes</span>
           <ChevronLeft className="w-6 h-6 text-gray-400" />
         </div>
         <div className="space-y-4">
