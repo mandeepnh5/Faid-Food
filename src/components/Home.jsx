@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* Sidebar */}
       <nav className="w-64 bg-white p-4 shadow-md">
         <div className="flex items-center gap-2 mb-8">
-          <span className="text-2xl font-bold text-green-600">🥬 RAJNY</span>
+          <span className="text-2xl font-bold text-green-600">🥬 MANDEEP</span>
           <ChevronLeft className="w-6 h-6 text-gray-400" />
         </div>
         <div className="space-y-4">
@@ -85,7 +85,7 @@ export default function HomePage() {
         </header>
 
         <h1 className="text-4xl font-bold mb-8">
-          <span className="text-green-600">Welcome</span> Back, RAJNY!
+          <span className="text-green-600">Welcome</span> Back, Mandeep!
         </h1>
 
         <div className="flex gap-4 mb-8">
