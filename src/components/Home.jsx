@@ -43,7 +43,7 @@ function Chatbot() {
         <Card className="w-80">
           <CardContent className="p-4">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold">Nutrient Food Chat</h3>
+              <h3 className="font-bold">NutriBalance</h3>
               <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
                 <X className="w-4 h-4" />
               </Button>
